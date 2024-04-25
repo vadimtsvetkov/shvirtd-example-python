@@ -3,14 +3,7 @@
 if ! command -v docker &> /dev/null
 then
     sudo apt-get update
-    sudo apt-get install -y docker.io
-fi
-
-if ! command -v docker-compose &> /dev/null
-then
-    sudo curl -L "https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    sudo apt-get install -y docker.io docker-compose
 fi
 
 if [ ! -d "/opt/shvirtd-example-python" ] ; then
@@ -20,8 +13,6 @@ else
     sudo git pull
 fi
 
-cd /opt/shvirtd-example-python
-
 pwd
 
-sudo docker compose -f compose.yaml up
+sudo docker compose -f /opt/shvirtd-example-python/compose.yaml up
