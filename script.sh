@@ -22,4 +22,6 @@ fi
 
 cd /opt/shvirtd-example-python
 
+pwd
+
 sudo docker compose -f compose.yaml up
