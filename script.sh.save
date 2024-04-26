@@ -1,6 +1,6 @@
 #!/bin/bash
 
-    sudo apt install -y docker docker-compose-v2
+    sudo apt install -y docker docker co
 
 if [ ! -d "/opt/shvirtd-example-python" ] ; then
     sudo git clone https://github.com/vadimtsvetkov/shvirtd-example-python /opt/shvirtd-example-python
